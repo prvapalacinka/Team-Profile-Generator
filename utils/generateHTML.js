@@ -1,6 +1,15 @@
 function generateHTML(employees) {
-
-
+var employeePanels = '';
+// make a for loop through employee
+// make a panel for each employee 
+var panel = ` <div class="panel panel-default">
+<div class="panel-heading">Manager</div>
+<div class="panel-body">Panel Content</div>
+<div class="panel-body">Panel Content</div>
+<div class="panel-body">Panel Content</div>
+</div>`
+// replace panel content with `${employees.name} etc 
+// add panel to employeePanels variable
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -32,27 +41,7 @@ function generateHTML(employees) {
   <div class="container">
     <h2>Panels with Contextual Classes</h2>
     <div class="panel-group">
-      <div class="panel panel-default">
-        <div class="panel-heading">Manager</div>
-        <div class="panel-body">Panel Content</div>
-        <div class="panel-body">Panel Content</div>
-        <div class="panel-body">Panel Content</div>
-      </div>
-
-      <div class="panel panel-primary">
-        <div class="panel-heading">Engineer</div>
-        <div class="panel-body">Panel Content</div>
-        <div class="panel-body">Panel Content</div>
-        <div class="panel-body">Panel Content</div>
-
-      </div>
-
-      <div class="panel panel-success">
-        <div class="panel-heading">Intern</div>
-        <div class="panel-body">Panel Content</div>
-        <div class="panel-body">Panel Content</div>
-        <div class="panel-body">Panel Content</div>
-      </div>
+    ${employeePanels}
     </div>
 </body>
 
