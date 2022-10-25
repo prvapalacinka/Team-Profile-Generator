@@ -10,32 +10,32 @@ inquirer
     {
       type: 'input',
       name: 'title',
-      message: 'What is the name of your project/repository?',
+      message: 'What is the name of your team manager?',
+      
+    },
+    {
+      type: 'input',
+      name: 'employeeID',
+      message: 'What is your employee ID?', 
       
     },
     {
       type: 'input',
       name: 'email',
-      message: 'What is your email?',
+      message: 'What is your email address?',
       
     },
     {
       type: 'input',
-      name: 'github_username',
-      message: 'What is your github username?',
+      name: 'officenumber',
+      message: 'What is your office number?',
       
     },
     {
-      type: 'input',
-      name: 'additionalquestions',
-      message: 'How can a user reach you about any additional questions?',
-      
-    },
-    {
-      type: 'input',
-      name: 'github_link',
-      message: 'What is your github project link?',
-      
+      type: 'list',
+      name: 'addEmployee',
+      message: 'Would you like to add any of the following?:',
+      choices: ['Engineer', 'Intern', 'No, finish building my team'],
     },
   ])
   .then((answers) => {
