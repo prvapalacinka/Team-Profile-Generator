@@ -1,15 +1,30 @@
 function generateHTML(employees) {
-var employeePanels = '';
-// make a for loop through employee
-// make a panel for each employee 
-var panel = ` <div class="panel panel-default">
+    var employeePanels = '';
+    // make a for loop through employee
+    // make a panel for each employee 
+    var managerPanel = ` <div class="panel panel-default">
 <div class="panel-heading">Manager</div>
-<div class="panel-body">Panel Content</div>
-<div class="panel-body">Panel Content</div>
-<div class="panel-body">Panel Content</div>
+<div class="panel-body">${employees.managername}</div>
+<div class="panel-body">${employees.employeeID}</div>
+<div class="panel-body">${employees.email}</div>
+<div class="panel-body">${employees.officenumber}</div>
 </div>`
-// replace panel content with `${employees.name} etc 
-// add panel to employeePanels variable
+    var engineerPanel = ` <div class="panel panel-default">
+<div class="panel-heading">Engineer</div>
+<div class="panel-body">${employees.name}</div>
+<div class="panel-body">${employees.employeeID}</div>
+<div class="panel-body">${employees.email}</div>
+<div class="panel-body">${employees.github}</div>
+</div>`
+    var internPanel = ` <div class="panel panel-default">
+<div class="panel-heading">Engineer</div>
+<div class="panel-body">${employees.name}</div>
+<div class="panel-body">${employees.employeeID}</div>
+<div class="panel-body">${employees.email}</div>
+<div class="panel-body">${employees.school}</div>
+</div>`
+    // replace panel content with `${employees.name} etc 
+    // add panel to employeePanels variable
 
     return `<!DOCTYPE html>
 <html lang="en">
@@ -46,6 +61,6 @@ var panel = ` <div class="panel panel-default">
 </body>
 
 </html>`
-} 
+}
 
 module.exports = generateHTML;

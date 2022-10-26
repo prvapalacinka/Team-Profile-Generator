@@ -51,13 +51,13 @@ inquirer
       when: (answers) => answers.addEmployee === "Engineer",
       type: 'input',
       name: 'github',
-      message: 'What is the name of the engineer?',
+      message: 'What is the engineers github username?',
     },
     {
       when: (answers) => answers.addEmployee === "Intern",
       type: 'input',
       name: 'school',
-      message: 'What is the name of the intern?',
+      message: 'What school does the intern attend?',
     },
     {
       type: 'list',
