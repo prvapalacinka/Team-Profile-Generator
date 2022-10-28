@@ -1,32 +1,44 @@
 function generateHTML(employees) {
-    var employeePanels = '';
-    // make a for loop through employee
-    // make a panel for each employee 
-    var managerPanel = ` <div class="panel panel-default">
-<div class="panel-heading">Manager</div>
-<div class="panel-body">${employees.managername}</div>
-<div class="panel-body">${employees.employeeID}</div>
-<div class="panel-body">${employees.email}</div>
-<div class="panel-body">${employees.officenumber}</div>
-</div>`
-    var engineerPanel = ` <div class="panel panel-default">
-<div class="panel-heading">Engineer</div>
-<div class="panel-body">${employees.name}</div>
-<div class="panel-body">${employees.employeeID}</div>
-<div class="panel-body">${employees.email}</div>
-<div class="panel-body">${employees.github}</div>
-</div>`
-    var internPanel = ` <div class="panel panel-default">
-<div class="panel-heading">Engineer</div>
-<div class="panel-body">${employees.name}</div>
-<div class="panel-body">${employees.employeeID}</div>
-<div class="panel-body">${employees.email}</div>
-<div class="panel-body">${employees.school}</div>
-</div>`
-    // replace panel content with `${employees.name} etc 
-    // add panel to employeePanels variable
+  var employeePanels = '';
+  // make a for loop through employee
+  for (let i = 0; i < employees.length; i++) {
+    console.log('hello', employees[i]);
 
-    return `<!DOCTYPE html>
+    if (employees[i].addEmployee == 'Engineer') {
+      var engineerPanel = ` <div class="panel panel-default">
+        <div class="panel-heading">Engineer</div>
+        <div class="panel-body">${employees[i].name}</div>
+        <div class="panel-body">${employees[i].employeeID}</div>
+        <div class="panel-body">${employees[i].email}</div>
+        <div class="panel-body">${employees[i].github}</div>
+        </div>`
+      employeePanels = employeePanels + engineerPanel;
+    }
+    else if (employees[i].addEmployee == 'Intern') {
+      var internPanel = ` <div class="panel panel-default">
+  <div class="panel-heading">Intern</div>
+  <div class="panel-body">${employees[i].name}</div>
+  <div class="panel-body">${employees[i].employeeID}</div>
+  <div class="panel-body">${employees[i].email}</div>
+  <div class="panel-body">${employees[i].school}</div>
+  </div>`
+      employeePanels = employeePanels + internPanel;
+    }
+    else {
+      var managerPanel = ` <div class="panel panel-default">
+  <div class="panel-heading">Manager</div>
+  <div class="panel-body">${employees[i].managername}</div>
+  <div class="panel-body">${employees[i].employeeID}</div>
+  <div class="panel-body">${employees[i].email}</div>
+  <div class="panel-body">${employees[i].officenumber}</div>
+  </div>`
+      employeePanels = employeePanels + managerPanel;
+    }
+  }
+
+
+  //    
+  return `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -61,6 +73,6 @@ function generateHTML(employees) {
 </body>
 
 </html>`
-}
+};
 
 module.exports = generateHTML;

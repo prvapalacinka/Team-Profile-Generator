@@ -18,7 +18,7 @@ inquirer
     {
       when: () => answerArray.length == 0,
       type: 'input',
-      name: 'name',
+      name: 'managername',
       message: 'What is the name of your team manager?',
       
     },
@@ -68,8 +68,13 @@ inquirer
     
   ])
   .then((answers) => {
+    if (answerArray.length == 0) {
+      answers['addEmployee'] = 'Manager';
+    }
     answerArray.push(answers);
     if ('No' === answers.finish) {
+      console.log(answerArray);
+      console.log(generateHTML(answerArray));
       writeToFile("EMPLOYEES.html", generateHTML(answerArray));
       console.log('html generated', answerArray);
     }
